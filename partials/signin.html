@@ -1,0 +1,108 @@
+<div class="container-fluid row fixedHeight" id="signinsignup">
+    <div class="splitter container-fluid">
+        <div class="splitter-item left-splitter col-md-6 col-sm-12 col-xs-12" style="height: 100%;  transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="vertical-container">
+                <div class="vertical-content">
+                    <a class="splitter-button" onclick="div_show_login()">
+						SIGN IN
+					</a>
+                </div>
+            </div>
+        </div>
+        <div class="splitter-item right-splitter col-md-6 col-sm-12 col-xs-12" style="height: 100%; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="vertical-container">
+                <div class="vertical-content">
+                    <a class="splitter-button" onclick="div_show()">
+						SIGN UP
+					</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="abc">
+        <!-- Popup Div Starts Here -->
+        <div id="popupContact">
+            <!-- Contact Us Form -->
+            <form action="#" id="form" name="form" ng-controller="signupCtrl" novalidate>
+                <img id="close" src="images/close.svg" onclick="div_hide()">
+                <h2 style="font-size: 30px;padding-bottom: 1.5em;">We would like to know <br/> few informations about you<br/>before we proceed</h2>
+
+                <div class="form-group" ng-class="{ 'has-error' : form.username.$invalid && !form.username.$pristine }">
+                    <input ng-hide="resetusername" id="name" name="username" placeholder="Your Name " type="text" ng-model="details.username">
+                    <p ng-show=" form.username.$invalid && ! form.username.$pristine" class="help-block">You name is required.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : form.emailAddress.$invalid && !form.emailAddress.$pristine }">
+                    <input ng-hide="resetemailAddress" name="emailAddress" class="email skill-drop" placeholder="Email address" type="email" ng-model="details.emailAddress">
+                    <p ng-show="form.emailAddress.$invalid && !form.emailAddress.$pristine" class="help-block">Enter a valid email.</p>
+                </div>
+
+                <input ng-hide="resetorganization" name="skillset" class="organization practice-drop" placeholder="Organization" type="text" ng-model="details.organization" required>
+
+                <input ng-hide="resetlocation" name="skillset" class="location location-drop" placeholder="Location" type="text" ng-model="details.location" required>
+                <input ng-hide="resetpassword" data-password-toggle type="{{showpassword ? 'text' : 'password'}}" id="passwords" placeholder="Password" name="password" ng-model="details.password" required ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/">
+
+                <div ng-messages="form.password.$error" style="line-height: initial;color:white;">
+                    <div ng-show="form.password.$error.pattern">Password should be atleast 8 characters long and should consists of lowercase,uppercase,numbers and special characters.
+                    </div>
+                </div>
+                <!-- <input ng-show="resetotp" type="submit" class="submit-otp" value="Submit OTP" ng-click="otpConfirmation()" > -->
+                <input ng-show="resetotp" id="otp" name="otp" type="password" ng-model="details.otp">
+                <input ng-show="resetotp" ng-click="otpConfirmation()" ng-disabled="form.$invalid && !form.$pristine" type="button" value="Submit OTP" class="submit-btn">
+                <input ng-hide="resetSubButton" ng-click="submitSignUP()" ng-disabled="form.$invalid && !form.$pristine" type="button" value="Sign Up" class="submit-btn">
+            </form>
+        </div>
+        <!-- Popup Div Ends Here -->
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginId">
+        <!-- Popup Div Starts Here -->
+        <div id="popupContact">
+            <!-- Contact Us Form -->
+            <form action="#" id="form" name="form" ng-controller="loginCtrl" novalidate>
+                <img id="close" src="images/close.svg" onclick="div_hide_login()">
+                <h2 style="font-size: 30px;padding-bottom: 1.5em;">Welcome to Idea Box<br/>Please Login here</h2>
+                <div class="form-group" ng-hide="hideUser" ng-class="{ 'has-error' : form.username.$invalid && !form.username.$pristine }">
+                    <input id="username" name="username" placeholder="User ID" type="text" ng-model="login_details.username">
+
+                    <p ng-show=" form.username.$invalid && ! form.username.$pristine" class="help-block">You name is required.</p>
+
+                </div>
+
+                <div class="form-group" ng-hide="hidePass" ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine }">
+                    <input id="password" name="password" placeholder="Password" type="password" ng-model="login_details.password" style="margin-top : 20px;">
+
+                    <p ng-show="form.password.$invalid && !form.password.$pristine" class="help-block">You password is required.</p>
+
+                </div>
+                <!--<p style="text-align:right;color : #fff;padding-right:30px"><a style="color:#fff;font-size : 15px;">Forgot Password?</a></p>-->
+
+                <input type="submit" ng-hide="forgotPass" class="forgot-pwd" id="forgot-pwd" value="Forgot Password?" ng-click="forgotPwd()">
+                <p></p>
+
+                <div class="form-group" ng-show="resetPass">
+
+                    <input ng-hide="forgotUser" id="username" class="email" name="email" placeholder="Enter your registered username" ng-model="login_details.username" type="text">
+
+                    <input ng-hide="resetotp" id="otpVerify" name="otp" class="location passwordChange" placeholder="Enter Verification code" type="text" ng-model="details.otp">
+
+                    <input ng-hide="resetotpPass" id="newPassword" name="newPassword" class="location passwordChange" placeholder="Enter new password" type="password" ng-model="details.newPassword">
+
+                    <input ng-hide="resetotpSubmit" ng-click="changePwd()" ng-disabled="form.$invalid && !form.$pristine" type="button" value="Change Password" class="submit-btn">
+
+                    <!--                     <p ng-show="form.email.$invalid && !form.email.$pristine" class="help-block">Enter a valid email.</p> -->
+                    <input ng-hide="forgotUserSubmit" type="button" ng-disabled="form.$invalid && !form.$pristine" value="Submit" ng-click="submiMailID()" class="submit-btn" id="submiMailID-btn" style="margin-top : 20px;">
+
+                    <!-- <div class="footer" style="font-size: 15px;font-family: helvatica thin !important;">Haven't received recovery mail? <span class="resend" style="font-size: 15px;font-family: helvatica thin !important;">Resend</span> </div>
+                    <p></p> -->
+                </div>
+
+                <input type="button" ng-hide="hideLogin" ng-disabled="form.$invalid && !form.$pristine" value="Login" ng-click="login()" class="submit-btn" id="submit-btn" style="margin-top : 100px;">
+
+            </form>
+        </div>
+        <!-- Popup Div Ends Here -->
+    </div>
+
+</div>

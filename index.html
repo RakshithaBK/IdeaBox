@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Idea Box</title>
+    <!--Core JavaScript files -->
+    <script src="js/Core/jquery.js"></script>
+    <script src="js/Core/angular.min.js"></script>
+    <script src="js/Core/bootstrap.min.js"></script>
+    <script src="js/Core/jquery.easing.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/Plugins/scrolling-nav.js"></script>
+    <script src="js/Plugins/popup.js"></script>
+
+    <!-- Angular Modules & controllers-->
+    <script src="js/Modules/app.js"></script>
+    <script src="js/Controllers/IdeaSubmissionController.js"></script>
+    <script src="js/Controllers/IntroductionController.js"></script>
+	<script src="js/Controllers/IdeaBoxDashBoardCtrl.js"></script>
+	<script src="js/Controllers/RegistrationController.js"></script>
+	<script src="js/Controllers/LoginController.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!--    Custom css for bootstrap nav-->
+    <style>
+        .fixedHeight {
+            height: 100%;
+        }
+		
+		.fixedHeight1 {
+            height: auto;
+        }
+        
+        .customNav {
+            background-color: transparent;
+            border: 0px;
+			 position: fixed;
+             z-index: 10;
+        }
+        
+        .customNavColor {
+            text-transform: uppercase;
+            font-size: 15px;
+            font-family: "Avenir Next Regular", sans-serif;
+            color: #ffffff !important;
+        }
+        
+        .active {
+            background-color: transparent;
+        }
+        
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+        }
+        
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+        
+        .navbar-fixed-top,
+        .navbar-fixed-bottom {
+            z-index: 10;
+        }
+    </style>
+
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="myApp" ng-controller="loginCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top customNav"  role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll customNavColor" href="#page-top"><img src="images/infinity.png" class="logo-img" style="height:40px;"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav" style="padding-top: 1em;">
+                    <li>
+                        <a class="page-scroll customNavColor navFont" href="#page-top">Introduction
+                        <div class="progress-border">
+                            <div class="progress-line introduction" style="width: 0%;"></div>
+                        </div></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll customNavColor navFont" href="#signin">Sign in<div class="progress-border">
+                        <div class="progress-line" style="width: 0%;"></div>
+                        </div></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll customNavColor navFont" href="#shareyouridea" ng-click="loginCheck();">Share an Idea<div class="progress-border">
+                        <div class="progress-line" style="width: 0%;"></div>
+                        </div></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll customNavColor navFont" href="#yourideas" ng-click="loginCheck();">Your Ideas<div class="progress-border">
+                        <div class="progress-line" style="width: 0%;"></div>
+                        </div></a>
+                    </li>
+					<li>
+                        <a class="page-scroll customNavColor navFont" href="#awards" ng-click="loginCheck();">Appreciations<div class="progress-border">
+                        <div class="progress-line" style="width: 0%;"></div>
+                        </div></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section fixedHeight" ng-include="'partials/Introduction.html'">
+    </section>
+
+    <!-- SignIn Section -->
+    <section id="signin" class="about-section fixedHeight" style="padding:0px" ng-include="'partials/SignIn.html'">
+    </section>
+
+    <!-- Share Your Idea Section -->
+    <section id="shareyouridea" class="services-section fixedHeight hideMainSection" style="padding:0px; background-color:grey" ng-include="'partials/IdeaSubmission.html'">
+    </section>
+
+    <section id="yourideas" class="contact-section fixedHeight1 hideMainSection" style="padding-top:0%" ng-include="'partials/IdeaBox.html'" ></section>
+	<section id="awards" class="contact-section fixedHeight1 hideMainSection" style="padding-top:0%" ng-include="'partials/awards.html'" ></section>
+
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+
+    <div id="scrollContainerSA" ng-controller="ideaSubmissionCtrl">
+<!--         onmousewheel="wheelDown(event)"-->
+		<form name="" >
+			<div id="innerContainerSA" onclick="containerClick(event)">
+				<ul id="outerEffectContainer">
+					<li id="innerCard0" class="innerCard" style="transform: scaleX(1) translateY(99px);z-index: 4; background-color:white">
+						<div class="col-xs-12 fullheight">
+							<!-- <div>
+								<h3 class="question-header"><span class="question-no">1 -&gt;</span> Name of Idea or Project</h3>
+							</div>
+							<div style="position:relative">
+								<div style="position:absolute" class="glyphicon-plus plusIcon" onclick="popUpIconClicked(event)"></div>
+								<textarea rows="4" class="questions" onkeyup="textareaChange(event)"></textarea>
+							</div> -->
+							<div id="1" class="slide col-md-12 col-sm-8 col-xs-12" style="height:75%">
+								<h3 class="question-header"><span class="question-no">1 -></span> Name of Idea or Project</h3>
+								<!-- <input type="text" name="question1" id="question1" class="questions" > -->
+								<div style="position:relative; height:80%">
+									<div style="position:absolute" class="glyphicon-plus plusIcon" onclick="popUpIconClicked(event)"></div>
+
+									<textarea name="question1" id="question1" class="questions textareaStyle" ng-model="myIdeas.ideaName"></textarea>
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-8 col-sm-8 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+
+						</div>
+					</li>
+					<li id="innerCard1" class="innerCard" style="transform: scaleX(0.95) translateY(132px);z-index: 3;">
+						<div class="col-xs-12 fullheight" style="opacity: 0.72">
+							<div id="2" class="slide col-md-12 col-sm-12 col-xs-12" style="height:75%">
+								<h3 class="question-header"><span class="question-no">2 -></span> Why interested in this idea and what part you are interested in</h3>
+								<div style="position:relative; height:80%">
+									<div style="position:absolute" class="glyphicon-plus plusIcon" onclick="popUpIconClicked(event)"></div>
+
+									<textarea name="question1" id="question2" class="questions textareaStyle" ng-model="myIdeas.interested"></textarea>
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-12 col-sm-8 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="innerCard2" class="innerCard" style="transform: scaleX(0.9) translateY(165px);z-index: 2;">
+						<div class="col-xs-12 fullheight" style="opacity: 0.44">
+							<div id="3" class="slide col-md-12 col-sm-12 col-xs-12" style="height:75%">
+								<h3 class="question-header"><span class="question-no">3 -></span> What are the technologies used</h3>
+								<div style="position:relative; height:80%">
+									<div style="position:absolute" class="glyphicon-plus plusIcon" onclick="popUpIconClicked(event)"></div>
+
+									<textarea name="question1" id="question3" class="questions textareaStyle" ng-model="myIdeas.technologies"></textarea>
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-12 col-sm-8 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="innerCard3" class="innerCard" style="transform: scaleX(0.85) translateY(198px); z-index: 1;   ">
+						<div class="col-xs-12 fullheight" style="opacity: 0.16">
+							<div id="4" class="slide col-md-12 col-sm-12 col-xs-12" style="height:75%">
+								<h3 class="question-header"><span class="question-no">4 -></span> Why are the technologies used?</h3>
+								<div style="position:relative; height:80%">
+									<div style="position:absolute" class="glyphicon-plus plusIcon" onclick="popUpIconClicked(event)"></div>
+
+									<textarea name="question1" id="question4" class="questions textareaStyle" ng-model="myIdeas.why_used"></textarea>
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-12 col-sm-8 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="innerCard4" class="innerCard" style="transform: scaleX(0.85) translateY(0px);z-index: 1;">
+						<div class="col-xs-12" style="opacity: 0.16">
+							<div id="5" class="slide col-md-12 col-sm-12 col-xs-12">
+								<h3 class="question-header"><span class="question-no">5 -></span> Choose a practice the idea belongs to and a Mentor if you need assistance</h3>
+								<div style="margin-bottom: 2%;" id="categorylist" class="col-md-12 col-sm-12 com-xs-12">																		
+									<!-- <input type="checkbox" ng-model="myIdeas.category" ng-repeat="primarylist in categoryPrimaryList">{{primarylist}} -->
+									<label class="switch switch-lebel" ng-repeat="primarylist in categoryPrimaryList">
+									  <input type="checkbox" class="categoryCheckBox" value="{{primarylist.name}}" ng-checked="{{primarylist.isChecked}}" ng-click="removeUnchecked(primarylist.name, $event)">
+									  <div class="slider">{{primarylist.name}}</div>
+									</label>
+									<label class="drop-lebel">
+										<div class="div-drop"> Add More Practice  <span class="down-up glyphicon glyphicon-menu-down"></span></div>
+										<div class="dropdown-list">
+											<div ng-repeat="dropdowncategory in secondarydropdown" ng-click="addClicked($index, $event)">{{dropdowncategory}}</div>
+										</div>
+									</label>
+									
+									
+									
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-3 col-sm-5 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="innerCard5" class="innerCard" style="transform: scaleX(0.9) translateY(33px);z-index: 2;">
+						<div class="col-xs-12" style="opacity: 0.44">
+							
+							<div id="6" class="slide col-md-12 col-sm-12 col-xs-12" style="height:75%">
+								<h3 class="question-header"><span class="question-no">6 -></span>Choose a practice the idea belongs to and a internal or external Mentor if you need assistance</h3>
+								<div style="position:relative; height:80%">
+									<div class="col-md-7 col-sm-7 col-xs-12 right-border">
+										<input type="text" name="mentorname" placeholder="Name" class="nameclass col-md-12 col-sm-12 col-xs-12" id="mentName">
+										<br/>
+										<div class="col-md-6 col-sm-6 col-xs-12 mentor-email">
+											<input type="text" name="mentoremail" placeholder="Email Id" class="nameclass col-md-12 col-sm-12 col-xs-12" id="mentemail">
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 mentor-email">
+											<button ng-click="addMentors($event)">+Add Mentor</button>
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-5 col-xs-12 mentor-main">
+										<div class="col-md-10 col-sm-10 col-xs-12 inner-mentor">
+											<div class="list-head">Your Mentors</div>
+											<div class="mentors-list" ng-repeat="names in myIdeas.mentor">{{$index+1}} {{names}}</div>
+											
+										</div>
+										
+									</div>
+									
+								</div>
+							</div>
+							<div class="inner-slider2 col-md-12 col-sm-8 col-xs-12">
+								<div id="next-btn" onclick="okClicked(event)" style="margin-top: 2%;">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Ok" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="innerCard6" class="innerCard" style="transform: scaleX(0.95) translateY(66px);z-index: 3;">
+						<div class="col-xs-12" style="opacity: 0.72">
+							<div id="7" class="slide col-md-12 col-sm-12 col-xs-12">
+								<h3 class="question-header"><span class="question-no">7 -></span>Drop your files related to idea so that others can understand it better <span class="optional-span">(optional)</span></h3>
+								<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" class="questions" style="display:none;" />
+								<div id="filedrag" style="display:block !important;width : 100%;">Upload or drag and drop here</div>
+							</div>
+							<div class="inner-slider2 col-md-12 col-sm-8 col-xs-12" >
+								<div id="next-btn" ng-click="myIdeas.postIdeasFunction()">
+									<div class="ok-btn">
+										<div class="ok-btn1">
+											<input type="submit" value="Submit" class="input-ok"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </div>
+									</div>
+									<div class="ok-press">Press Enter</div>
+								</div>
+							</div>
+							<p ng-show="showpara">Your Idea has been submitted successfully...</p>
+							<p ng-show="showparaError" style="color:red;">Your Idea is not good man!!!</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</form>
+    </div>
+    <script>
+        var oContainter = document.getElementById('outerEffectContainer');
+        //Positioning at center
+        oContainter.style.top = ($(window).height() - ($('#innerCard0').height() + 6 * 33)) / 2 + "px";
+        oContainter.style.left = ($(window).width() - $('#innerCard0').width()) / 2 + "px";
+
+        //Attaching Events
+        oContainter.addEventListener("click", liClick, false);
+        var initialPosition = [5, 6, 7, 1, 2, 3, 4];
+        var initialCount = 1;
+        var frequency = 1;
+
+        function wheelDown(e) {
+            ++initialCount
+            if (initialCount % frequency == 0) {
+                initialPosition = updatePosition(initialPosition);
+                transformLI(initialPosition)
+            }
+        }
+        
+        function changePosition(e) {
+            var scrollPercentage = 100 * e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight);
+            var lLiItems = document.querySelectorAll("#innerContainerSA li");
+            var focusElement = Math.ceil(scrollPercentage / 100 * 7);
+            transformLI(lLiItems, focusElement, e);
+        }
+
+        function liClick(e) {
+			
+            var ele = $(e.target).closest('.innerCard')[0];
+            var focusElement = ele.getAttribute("id");
+            focusElement = parseInt(focusElement.substr(focusElement.length - 1, 1)) + 1;
+            initialPosition[3] = focusElement;
+            for (var i = 4; i < 10; i++) {
+                initialPosition[i % 7] = (initialPosition[(i - 1) % 7] % 7) + 1;
+            }
+            transformLI(initialPosition);
+			
+        }
+
+        function transformLI(initialPosition) {
+            var lLiItems = document.querySelectorAll("#innerContainerSA li");
+            for (var i = 0; i < lLiItems.length; i++) {
+                var focusElementP = initialPosition.indexOf(i + 1);
+                var distance = focusElementP < 3 ? 0 - (focusElementP - 3) : focusElementP - 3;
+                lLiItems[i].style.transform = "scaleX(" + (1 - distance * 0.05) + ") translateY(" + focusElementP * 33 + "px)";
+                lLiItems[i].style.zIndex = 8 - distance * 2;
+                lLiItems[i].style.backgroundColor = 3 != focusElementP ? "rgb(239, 239, 239)" : "#FFFFFF";
+                lLiItems[i].style.transition = "transform .4s ease-out, z-index .4s, background-color .4s";
+                lLiItems[i].children[0].style.opacity = 1 - distance * 0.28;
+            }
+        }
+        
+        function popUpIconClicked(e) {
+            var ele = document.getElementById("innerCard" + (initialPosition[3] - 1));
+            if ($("#innerCard" + (initialPosition[3] - 1) + " .plusIcon").hasClass("glyphicon-minus")) {
+                closePopUP(ele)
+            } else {
+                var rect = ele.getBoundingClientRect();
+                ele.style.transform += " translate3d(" + (0.05 * $(window).width() / 2 - rect.left) + "px, " + (0.1 * $(window).height() / 2 - rect.top) + "px, 0px)";
+                ele.style.transition = ""; // "transform .5s, width .5s, height .5s";
+                ele.style.width = 0.95 * $(window).width() + "px";
+                ele.style.height = 0.9 * $(window).height() + "px";
+                $(ele).addClass("CardOpen");
+                $("#innerCard" + (initialPosition[3] - 1) + " .inner-slider2").addClass("col-md-offset-5");
+                $("#innerCard" + (initialPosition[3] - 1) + " textarea")[0].style.height = "100%";
+                $("#innerCard" + (initialPosition[3] - 1) + " .glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+                document.getElementById("outerEffectContainer").removeEventListener("click", liClick, false);
+            }
+            e.stopPropagation();
+        }
+        
+        function closePopUP(ele) {
+            ele.style.transform = "translate3d(0px, 99px, 0px)";
+            var rEle = document.getElementById("innerCard" + (initialPosition[0] - 1));
+            ele.style.width = rEle.style.width;
+            ele.style.height = rEle.style.height;
+            $(".CardOpen .inner-slider2").removeClass("col-md-offset-5");
+            $(".CardOpen textarea")[0].style.height = "70%";
+            $(".CardOpen .glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+            $(ele).removeClass("CardOpen");
+            oContainter.addEventListener("click", liClick, false);
+        }
+        
+        function containerClick(e) {
+            var ele = $(".CardOpen")[0];
+            if (ele) {
+                var rect = ele.getBoundingClientRect();
+                if (!(rect.left < e.clientX && e.clientX < rect.right) || !(rect.top < e.clientY && e.clientY < rect.bottom)) {
+                    closePopUP(ele);
+                }
+            }
+            e.stopPropagation();
+        }
+
+        function okClicked(e) {
+            var ele = document.getElementById("innerCard" + (initialPosition[3] - 1));
+            if($(".CardOpen").length > 0){
+                closePopUP(ele);
+            }
+            initialPosition = updatePosition(initialPosition);
+            transformLI(initialPosition)
+            e.stopPropagation();
+        }
+
+        function updatePosition(input) {
+            for (var i = 0; i < input.length; i++) {
+                input[i] = input[i] % 7 + 1
+            }
+            return input;
+        }
+
+        function has_scrollbar(elem) {
+            if (elem.clientHeight < elem.scrollHeight) {
+                $(elem).before('')
+            }
+        }
+
+        function textareaChange(e) {
+            //has_scrollbar(e.target);
+        }
+		
+		$(document).ready(function(){
+			$('.dropdown-list').hide();
+			
+			$('.div-drop').click(function(){			
+				$('.dropdown-list').toggle(300);
+				if($('.div-drop span').hasClass('glyphicon-menu-down')){
+					$('.div-drop span').removeClass('glyphicon-menu-down').addClass('glyphicon-menu-up');
+				}
+				else{
+					$('.div-drop span').removeClass('glyphicon-menu-up').addClass('glyphicon-menu-down');
+				}	
+			});
+			
+			
+			
+		});
+		
+    </script>
+	
+<style>
+.switch {
+	position: relative;
+    display: inline-block;
+    width: 108px;
+    height: 40px;
+    margin-right: 5%;
+    float: left;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  outline: 2px dashed #2a9fd8;
+  color : #2a9fd8;
+  vertical-align: middle;
+    line-height: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2a9fd8;
+  color : #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2a9fd8;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+#categorylist {
+    margin-bottom: 2%;
+    border: 2px dashed #2a9fd8;
+}
+label.drop-lebel {
+    float: left;
+    display: inline-block;
+    height: 40px;
+    vertical-align: text-top;
+}
+.div-drop {
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 55px;
+    font-size: 16px;
+    color: #2a9fd8;
+	    cursor: pointer;
+}
+.dropdown-list {
+    border: 1px solid #2a9fd8;
+    line-height: 35px;
+    background: #2a9fd8;
+    text-align: left;
+    padding-left: 16px;
+    color: #fff;
+    opacity: 0.8;
+}
+.switch-resize {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+.nameclass {
+    border: none;
+    outline: 2px dashed #2a9fd8;
+    height: 38px;
+}
+.mentor-email {
+    padding-left: 0px;
+    margin-top: 17px;
+}
+.mentor-email button {
+    background: #2a9fd8;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 22px;
+    border-radius: 5px;
+}
+.right-border{
+	border-right : 2px solid #2a9fd8;
+}
+.list-head {
+    background: #2a9fd8;
+    font-size: 19px;
+    color: #fff;
+    padding: 8px 14px;
+	text-align: left;
+    padding-left: 11%;
+}
+.inner-mentor {
+    border: 2px dashed #2a9fd8;
+    padding: 0px;
+    line-height: 21px;
+        height: 112px;
+    overflow-y: scroll;
+}
+.mentors-list {
+    font-size: 16px;
+    line-height: 24px;
+    color: #2a9fd8;
+    text-align: left;
+    padding-left: 11%;
+}
+</style>

@@ -1,0 +1,99 @@
+
+<div class="container-fluid main-dashboard" ng-controller="IdeaBoxDAshBoardCtrl">
+	<div class="container-fluid main-ideabox">
+		<div class="container-fluid statistics">
+			<div class="container stats">
+				<div class="col-sm-12 col-md-12 col-lg-12" style="font-size: 28pt;font-family: helvatica thin;line-height: 36px;font-weight: 600;">
+					Awards and Appreciations
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid statistics-slider" style="padding-bottom: 3em;">
+			<div class="col-md-2 col-sm-2 col-xs-2 left-arrow" ng-click="isEnableLeft && clickPrevious()"><img src="images/Group 115.png"></div>
+			<div class="col-md-8 col-sm-8 col-xs-8">
+				<div class="col-md-12 col-sm-12 col-xs-12 sliding-container">
+					<div ng-repeat="scrollind in scrollIndexs" class="outer-div ng-scroll-{{$index}}">
+						<div class="inner-main-div">
+							<img src="images/Layer 16.png">
+							<h5 class="header-h5">Angularjs</h5>
+							<p class="below-para">{{scrollind.ideas_participating}} Participants</p>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-2 col-xs-2  right-arrow" ng-click="isEnable && clickRight()"><img src="images/Group 116.png"></div>
+		</div>
+		
+	</div>
+	<div class="container-fluid display-ideas" >
+		<div class="col-md-2 col-sm-2 col-xs-2"></div> 
+		<div class="col-md-8 col-sm-8 col-xs-8 tabs-contents">
+			<div class="container-fluid">
+				
+				<div class="tab-content">
+					<div id="allideas" class="tab-pane fade in active">
+						
+						<div class="outer-content-section col-md-12 col-sm-12 col-xs-12 remove-padding" ng-show="showThisList" style="margin-top: 10px;" ng-repeat="ideas in populateIdeas">
+							
+							<div class="col-md-12 col-sm-12 col-xs-12 sliding-container1">								
+								<div ng-repeat="idea in ideas.ideas" class="col-md-4 col-sm-4 col-xs-12">
+									<div class="outers-div col-md-12 col-sm-12 col-xs-12 remove-padding">
+										<div class="inner-main-div1 col-md-12 col-sm-12 col-xs-12 remove-padding" >
+											<img src="images/Layer 17.png">
+											<h5 class="header-h5" style="padding-left:15px;">{{idea.name | uppercase}}</h5>
+											<p class="below-para" style="padding-left:15px;">{{ideas.ideas_participating}} Participants</p>
+											<div style="position:absolute;right: 15px;bottom: 20px;color: #3385ff;font-size: 18px;"><img src="images/Thumps UP_Grey.png" ng-click="likeIt(idea._id)" style="height:18px;width:18px;cursor:pointer;"/> {{idea.details.likes}}</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12 col-xs-12 remove-padding details-images">
+										<h4 class="meet-team">Meet the Team</h4>
+										<img src="images/Layer 231.png" style="height : 36px;width : 36px;border: 2px solid #ccc;border-radius: 50%;"/> <img src="images/Layer 241.png" style="height : 36px;width : 36px;border: 2px solid #ccc;border-radius: 50%;"/> <img src="images/Layer 251.png" style="height : 36px;width : 36px;border: 2px solid #ccc;border-radius: 50%;"/> <img src="images/Shape 32.png" style="height : 36px;width : 36px;"/>
+										<p class="overall-para" style="padding-bottom: 1em;">In publishing and graphic design, lorem ipsum (derived from Latin dolorem ipsum, translated as "pain itself") is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation</p>
+										
+										<div class="col-md-3 col-sm-3 col-xs-3 remove-padding" style="text-align:left;width: 15%;">
+											<img src="images/Layer 231.png" style="height : 36px;width : 36px;border: 2px solid #ccc;border-radius: 50%;"/>
+										</div>
+										
+										<div class="col-md-8 col-sm-8 col-xs-6 remove-padding" style="top: -8px;padding-bottom: 1em;">
+											<h3 class="nameof-owner1 nameof-owner">Manager | AWS Cloud</h3>
+											<p class="location-owner1 location-owner">TRIANZ</p>
+										</div>
+
+										<div class="col-md-12 col-sm-12 col-xs-12 remove-padding see-mr" onclick="show_detail_div()" ng-click="">
+											VIEW ALL APPRECIATIONS
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2"></div> 
+	</div>
+	
+	
+	<!--Idea Details Popup-->
+	
+	<div id="ideadetails">
+	
+	
+	
+	</div>
+	<div id="see-more-page" class="container-fluid">
+		<div class="col-md-2 col-sm-2 col-xs-2"></div> 
+		<div class="col-md-8 col-sm-8 col-xs-8" ng-include="'partials/IdeaDetail.html'">
+			<!-- <show-more-details></show-more-details> -->
+		</div> 
+		<div class="col-md-2 col-sm-2 col-xs-2"></div> 
+
+	</div>	
+</div>
+
+
